@@ -91,7 +91,7 @@ export default function Header() {
         animate="visible"
         id={`header__main__container`}
       >
-        <Link to={"/"} className="logo_container_parent">
+        <Link to={"/car-rental"} className="logo_container_parent">
           <motion.div className={`logo_container`}>
             <img
               className={`logo`}
