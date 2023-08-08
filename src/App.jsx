@@ -21,7 +21,7 @@ export default function App() {
           <Route exact path="/cars" element={<CarsPage />} />
           <Route exact path="/services" element={<ServicesPage />} />
           <Route exact path="/cars/:name" element={<CarDetailPage />} />
-          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/car-rental" element={<HomePage />} />
         </Routes>
       </div>
       <BackToTopButton />
