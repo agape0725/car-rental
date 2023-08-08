@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import faqs from "./PropsAccordion";
 import arrowIcon from "../images/arrow-down.png";
 import benzImg from "../images/benz.png";

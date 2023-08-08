@@ -1,47 +1,4 @@
-// import React from "react";
-// import services from "./PropsServicesOffer";
-
-// export default function ServicesOffer() {
-//   return (
-//     <div id="main__services__offer__container">
-//       <div className="services_offer_container">
-//         <div className="services_offer_introduction">
-//           <h1>what we do</h1>
-//           <h2>WE ALSO PROVIDE SERVICES</h2>
-//         </div>
-//         <div className="services_lists_container">
-//           {services.map((service, i) => (
-//             <div className={`sevices_lists`}>
-//               <div
-//                 className="services-icon"
-//                 style={{ backgroundImage: `url(${service.icon})` }}
-//               />
-//               <div className="services_left_col">
-//                 <h1>{service.title}</h1>
-//                 <p>{service.description}</p>
-//               </div>
-//               <div className={`services_right_col`}>
-//                 <img
-//                   className={`services-image`}
-//                   src={service.photo}
-//                   alt="serices-image"
-//                 />
-//                 <div
-//                   className="services-image-2"
-//                   style={{ backgroundImage: `url(${service.miniPhoto})` }}
-//                 />
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-//////////////////
-
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Media from "react-media";

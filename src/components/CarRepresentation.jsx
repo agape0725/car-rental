@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";

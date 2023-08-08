@@ -17,11 +17,11 @@ export default function App() {
       <ScrollToTop />
       <div className="content">
         <Routes>
-          <Route exact path="/about" element={<AboutPage />} />
-          <Route exact path="/cars" element={<CarsPage />} />
-          <Route exact path="/services" element={<ServicesPage />} />
-          <Route exact path="/cars/:name" element={<CarDetailPage />} />
           <Route exact path="/car-rental" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/cars" element={<CarsPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/cars/:name" element={<CarDetailPage />} />
         </Routes>
       </div>
       <BackToTopButton />

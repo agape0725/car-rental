@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 
 export default function Header() {
@@ -49,26 +50,36 @@ export default function Header() {
     };
   });
 
+  const { ref: mainHeaderContainerRef, inView: mainHeaderContainerVisible } =
+    useInView({
+      threshold: 0.3,
+    });
+
+  const mainHeaderContainerAnimation = useAnimation();
+
+  useEffect(() => {
+    if (mainHeaderContainerVisible) {
+      mainHeaderContainerAnimation.start("visible");
+    }
+  }, [mainHeaderContainerVisible]);
+
   const containerVariants = {
     hidden: {
       opacity: 0,
-      y: -40,
     },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
-        type: "spring",
-        staggerChildren: 0.12,
+        staggerChildren: 0.1,
         when: "beforeChildren",
       },
     },
   };
 
-  const listVariants = {
+  const containerChildrenVariant = {
     hidden: {
       opacity: 0,
-      y: -80,
+      y: -30,
     },
     visible: {
       opacity: 1,
@@ -80,19 +91,23 @@ export default function Header() {
   };
 
   return (
-    <>
+    <motion.div
+      className="main_header_overlay"
+      ref={mainHeaderContainerRef}
+      variants={containerVariants}
+      initial="hidden"
+      animate={mainHeaderContainerAnimation}
+    >
       <div
         style={{ left: `${showHeaderMenu ? `0` : `130%`}` }}
         className={`header_overlay`}
       />
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        id={`header__main__container`}
-      >
+      <motion.div id={`header__main__container`}>
         <Link to={"/car-rental"} className="logo_container_parent">
-          <motion.div className={`logo_container`}>
+          <motion.div
+            className={`logo_container`}
+            variants={containerChildrenVariant}
+          >
             <img
               className={`logo`}
               src={require("../images/vector.png")}
@@ -103,8 +118,8 @@ export default function Header() {
             </h1>
           </motion.div>
         </Link>
-        <div className="header_ul_container">
-          <img
+        <motion.div className="header_ul_container">
+          <motion.img
             style={{ left: `${showHeaderMenu ? `92.3%` : `130%`}` }}
             src={`${require(`../images/close-icon.png`)}`}
             alt="close-icon"
@@ -117,7 +132,7 @@ export default function Header() {
           >
             <motion.li
               ref={navListRef}
-              variants={listVariants}
+              variants={containerChildrenVariant}
               className={`header-list`}
               onClick={() => setShowHeaderMenu(false)}
             >
@@ -125,7 +140,7 @@ export default function Header() {
             </motion.li>
             <motion.li
               ref={navListRef}
-              variants={listVariants}
+              variants={containerChildrenVariant}
               className={`header-list`}
               onClick={() => setShowHeaderMenu(false)}
             >
@@ -133,7 +148,7 @@ export default function Header() {
             </motion.li>
             <motion.li
               ref={navListRef}
-              variants={listVariants}
+              variants={containerChildrenVariant}
               className={`header-list`}
               onClick={() => setShowHeaderMenu(false)}
             >
@@ -141,16 +156,17 @@ export default function Header() {
             </motion.li>
             <motion.li
               ref={navListRef}
-              variants={listVariants}
+              variants={containerChildrenVariant}
               className={`header-list`}
               onClick={() => setShowHeaderMenu(false)}
             >
               <Link to="/services">Services</Link>
             </motion.li>
           </motion.ul>
-        </div>
+        </motion.div>
         <motion.div
           className={`header_contact_us_container`}
+          variants={containerChildrenVariant}
           whileHover={{
             boxShadow: "rgba(0, 0, 0, 0.4) 0px 5px 10px",
           }}
@@ -166,6 +182,6 @@ export default function Header() {
           <span className="bar"></span>
         </div>
       </motion.div>
-    </>
+    </motion.div>
   );
 }

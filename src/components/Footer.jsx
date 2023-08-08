@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { socmeds, hours, contacts } from "./PropsFooter";
 import splatter from "../images/splatter.png";
 

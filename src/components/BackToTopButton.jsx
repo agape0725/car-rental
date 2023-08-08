@@ -27,7 +27,7 @@ export default function BackToTopButton() {
       className={`arrow_up_window_container ${backToTop && `active`}`}
       onClick={scrollUp}
     >
-      <img className="arrow-up-window" src={arrowUp} />
+      <img className="arrow-up-window" src={arrowUp} alt="arrow-up" />
     </div>
   );
 }

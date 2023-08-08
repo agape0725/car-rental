@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { carOptions, sedans, suvs } from "./PropsVehicleModels";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
