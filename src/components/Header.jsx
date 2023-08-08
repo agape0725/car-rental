@@ -121,7 +121,7 @@ export default function Header() {
               className={`header-list`}
               onClick={() => setShowHeaderMenu(false)}
             >
-              <Link to="/">Home</Link>
+              <Link to={"/car-rental"}>Home</Link>
             </motion.li>
             <motion.li
               ref={navListRef}
