@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/car-rental/static/css/main.f64ec082.css",
-    "main.js": "/car-rental/static/js/main.6f064206.js",
+    "main.js": "/car-rental/static/js/main.41eeadd4.js",
     "static/media/innova2.jpg": "/car-rental/static/media/innova2.f629867a7f7edded0d23.jpg",
     "static/media/car-header-cars.jpg": "/car-rental/static/media/car-header-cars.b8c044d8e0e235b815ec.jpg",
     "static/media/teamwork.jpg": "/car-rental/static/media/teamwork.aa89ac108e4b768f55cd.jpg",
@@ -93,10 +93,10 @@
     "static/media/blob3.svg": "/car-rental/static/media/blob3.79f9d501115ffdf19c4a618fe8027940.svg",
     "index.html": "/car-rental/index.html",
     "main.f64ec082.css.map": "/car-rental/static/css/main.f64ec082.css.map",
-    "main.6f064206.js.map": "/car-rental/static/js/main.6f064206.js.map"
+    "main.41eeadd4.js.map": "/car-rental/static/js/main.41eeadd4.js.map"
   },
   "entrypoints": [
     "static/css/main.f64ec082.css",
-    "static/js/main.6f064206.js"
+    "static/js/main.41eeadd4.js"
   ]
 }
